@@ -1,0 +1,26 @@
+version: '3'
+services:
+  nodemongo1:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir:  '/usr/src/app'
+    environment:
+      VIRTUAL_HOST: 'helloworld.localhost.local'
+      VIRTUAL_DIR: 'helloworld1'
+    expose:
+      - 80
+      - 443
+  nodemongo1_mongo:
+    container_name: nodemongo1_mongo
+    image: mongo
+    command: mongod --port 27019
+    ports:
+      - "27019:27019"
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+
