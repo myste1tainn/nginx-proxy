@@ -1,4 +1,4 @@
-#Nginx-proxy Boilerplates
+# Nginx-proxy Boilerplates
 
 My very own boilerplate scripts for nginx-proxy deployment.
 This supports "deployment by direcotry" in one subdomain.
